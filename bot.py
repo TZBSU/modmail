@@ -1444,7 +1444,7 @@ class ModmailBot(commands.Bot):
                 return
         except discord.NotFound:
             return
-        embed.set_footer(text=f"Message ID: {message.id} from {message.author}.")
+        embed.set_footer(text=f"Message IDTEST: {message.id} from {message.author}.")
         return await message.channel.send(embed=embed)
 
     async def on_bulk_message_delete(self, messages):
@@ -1468,7 +1468,7 @@ class ModmailBot(commands.Bot):
                 await self.add_reaction(after, blocked_emoji)
             else:
                 embed = discord.Embed(description="Successfully Edited Message", color=self.main_color)
-                embed.set_footer(text=f"Message ID: {after.id}")
+                embed.set_footer(text=f"Message IDTEST: {after.id}")
                 await after.channel.send(embed=embed)
 
     async def on_error(self, event_method, *args, **kwargs):
