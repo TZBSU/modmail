@@ -159,7 +159,7 @@ def parse_image_url(url: str, *, convert_size=True) -> str:
     str
         The converted URL, or '' if the URL isn't in the proper format.
     """
-    types = [".png", ".jpg", ".gif", ".jpeg", ".webp"]
+    types = [".png", ".jpg", ".gif", ".jpeg", ".webp", ".svg"]
     url = parse.urlsplit(url)
 
     if any(url.path.lower().endswith(i) for i in types):
