@@ -134,7 +134,8 @@ def is_image_url(url: str, **kwargs) -> str:
     bool
         Whether the URL is a valid image URL.
     """
-    if url.startswith("https://gyazo.com") or url.startswith("http://gyazo.com"):
+    if url.startswith("https://gyazo.com") or url.startswith("http://gyazo.com") or url.startswith("https://imgur.com")\
+            or url.startswith("http://imgur.com"):
         # gyazo support
         url = re.sub(
             r"(http[s]?:\/\/)((?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*(),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+)",
