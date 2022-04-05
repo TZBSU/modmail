@@ -1,5 +1,6 @@
 import base64
 import functools
+import logging
 import re
 import typing
 from difflib import get_close_matches
