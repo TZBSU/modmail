@@ -1000,7 +1000,7 @@ class Thread:
             ) and not embedded_image:
                 if url is not None:
                     embed.set_image(url=url)
-                    embed.timestamp = "prio TEST"
+                    embed.set_footer(text="PRIO TEST")
                 if filename:
                     if is_sticker:
                         if url is None:
