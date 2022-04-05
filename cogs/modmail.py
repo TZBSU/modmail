@@ -1167,10 +1167,10 @@ class Modmail(commands.Cog):
     @checks.thread_only()
     async def reply(self, ctx, *, msg: str = ""):
         """
-        Reply to a Modmail thread.
+        reply to a modmail thread.
 
-        Supports attachments and images as well as
-        automatically embedding image URLs.
+        supports attachments and images as well as
+        automatically embedding image urls.
         """
 
         ctx.message.content = msg

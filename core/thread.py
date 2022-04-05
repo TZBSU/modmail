@@ -919,7 +919,8 @@ class Thread:
 
         embed = discord.Embed(description=message.content)
         if self.bot.config["show_timestamp"]:
-            embed.timestamp = message.created_at
+            embed.timestamp = "bot config line TEST"
+            #embed.timestamp = message.created_at
 
         system_avatar_url = "https://discordapp.com/assets/f78426a064bc9dd24847519259bc42af.png"
 
@@ -1000,7 +1001,6 @@ class Thread:
             ) and not embedded_image:
                 if url is not None:
                     embed.set_image(url=url)
-                    embed.set_footer(text="PRIO TEST")
                 if filename:
                     if is_sticker:
                         if url is None:
@@ -1009,7 +1009,7 @@ class Thread:
                             description = "\u200b"
                         embed.add_field(name=filename, value=description)
                     else:
-                        embed.add_field(name="Image", value=f"[{filename}]({url})")
+                        embed.add_field(name="Image", value=f"[{filename}]({url}) UPLOADED")
                 embedded_image = True
             else:
                 if note:
@@ -1028,7 +1028,7 @@ class Thread:
                 if filename is not None:
                     img_embed.title = filename
                 img_embed.set_footer(text=f"Additional Image Upload ({additional_count})")
-                #img_embed.timestamp = message.created_at
+                img_embed.timestamp = message.created_at
                 additional_images.append(destination.send(embed=img_embed))
                 additional_count += 1
 
