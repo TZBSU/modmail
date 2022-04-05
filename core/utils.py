@@ -142,7 +142,11 @@ def is_image_url(url: str, **kwargs) -> str:
             r"\1i.\2.png",
             url,
         )
-
+    elif url.startswith("https://imgur.com") or url.startswith("http://imgur.com"):
+        url = re.findall(
+            r"(http[s]?:\/\/)((?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*(),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+)",
+            url,
+        )
     return parse_image_url(url, **kwargs)
 
 
