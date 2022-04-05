@@ -1024,10 +1024,10 @@ class Thread:
                 if url is not None:
                     img_embed.set_image(url=url)
                     img_embed.url = url
-                    img_embed.timestamp = "TEST"
+                    img_embed.add_field(name="Image3", value=f"({url}) UPLOADED3")
                 if filename is not None:
-                    #img_embed.title = filename
-                    img_embed.title = "TEST TITLE"
+                    img_embed.title = filename
+                    img_embed.add_field(name="Image4", value=f"({filename}) UPLOADED4")
                 img_embed.set_footer(text=f"Additional Image Upload ({additional_count})")
                 img_embed.timestamp = message.created_at
                 additional_images.append(destination.send(embed=img_embed))
