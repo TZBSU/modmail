@@ -172,7 +172,8 @@ def parse_image_url(url: str, *, convert_size=True) -> str:
         if convert_size:
             return parse.urlunsplit((*url[:3], "size=128", url[-1]))
         else:
-            return parse.urlunsplit(url)
+            return parse.urlunsplit((*url[:3], "size=128", url[-1]))
+            #return parse.urlunsplit(url)
     return ""
 
 
