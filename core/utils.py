@@ -135,12 +135,17 @@ def is_image_url(url: str, **kwargs) -> str:
     bool
         Whether the URL is a valid image URL.
     """
-    if url.startswith("https://gyazo.com") or url.startswith("http://gyazo.com") or url.startswith("https://imgur.com")\
-            or url.startswith("http://imgur.com"):
+    if url.startswith("https://gyazo.com") or url.startswith("http://gyazo.com"):
         # gyazo support
         url = re.sub(
             r"(http[s]?:\/\/)((?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*(),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+)",
             r"\1i.\2.png",
+            url,
+        )
+    elif url.startswith("https://imgur.com") or url.startswith("http://imgur.com"):
+        url = re.sub(
+            r"(http[s]?:\/\/)((?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*(),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+)",
+            r"\1i.\2.jpg",
             url,
         )
 
@@ -169,7 +174,7 @@ def parse_image_url(url: str, *, convert_size=True) -> str:
             return parse.urlunsplit((*url[:3], "size=128", url[-1]))
         else:
             return parse.urlunsplit(url)
-    return ""
+    return "EMPTY"
 
 
 def human_join(strings):
