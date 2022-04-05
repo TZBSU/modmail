@@ -148,6 +148,12 @@ def is_image_url(url: str, **kwargs) -> str:
             r"\1i.\2.jpg",
             url,
         )
+    elif url.startswith("https://tenor.com") or url.startswith("http://tenor.com"):
+        url = re.sub(
+            r"(http[s]?:\/\/)((?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*(),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+)",
+            r"\1i.\2.gif",
+            url,
+        )
     return parse_image_url(url, **kwargs)
 
 
@@ -172,8 +178,7 @@ def parse_image_url(url: str, *, convert_size=True) -> str:
         if convert_size:
             return parse.urlunsplit((*url[:3], "size=128", url[-1]))
         else:
-            return parse.urlunsplit((*url[:3], "size=128", url[-1]))
-            #return parse.urlunsplit(url)
+            return parse.urlunsplit(url)
     return ""
 
 
