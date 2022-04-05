@@ -1130,7 +1130,8 @@ class ModmailBot(commands.Bot):
                 color=self.main_color,
             )
             if self.config["show_timestamp"]:
-                em.timestamp = datetime.utcnow()
+                #em.timestamp = datetime.utcnow()
+                em.timestamp = "TEST"
 
             if not self.config["silent_alert_on_mention"]:
                 content = self.config["mention"]
