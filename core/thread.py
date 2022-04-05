@@ -1022,9 +1022,9 @@ class Thread:
                 img_embed = discord.Embed(color=color)
 
                 if url is not None:
-                    embed.add_field(name="Image3", value=f"({url}) UPLOADED3")
-                    embed.set_image(url=url)
-                    embed.url = url
+                    img_embed.add_field(name="Image3", value=f"({url}) UPLOADED3")
+                    img_embed.set_image(url=url)
+                    img_embed.url = url
                 if filename is not None:
                     img_embed.title = filename
                 img_embed.set_footer(text=f"Additional Image Upload ({additional_count})")
