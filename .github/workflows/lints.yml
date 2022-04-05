@@ -28,6 +28,6 @@ jobs:
     - name: Pylint
       run: pylint ./bot.py cogs/*.py core/*.py  --exit-zero -r y
       continue-on-error: true
-    - name: Black
-      run: |
-        black . --diff --check
+#    - name: Black
+#      run: |
+#       black . --diff --check
