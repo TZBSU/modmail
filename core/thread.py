@@ -919,8 +919,7 @@ class Thread:
 
         embed = discord.Embed(description=message.content)
         if self.bot.config["show_timestamp"]:
-            embed.timestamp = "bot config line TEST"
-            #embed.timestamp = message.created_at
+            embed.timestamp = message.created_at
 
         system_avatar_url = "https://discordapp.com/assets/f78426a064bc9dd24847519259bc42af.png"
 
@@ -1026,7 +1025,8 @@ class Thread:
                     img_embed.url = url
                     img_embed.timestamp = "TEST"
                 if filename is not None:
-                    img_embed.title = filename
+                    #img_embed.title = filename
+                    img_embed.title = "TEST TITLE"
                 img_embed.set_footer(text=f"Additional Image Upload ({additional_count})")
                 img_embed.timestamp = message.created_at
                 additional_images.append(destination.send(embed=img_embed))
