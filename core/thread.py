@@ -1108,10 +1108,10 @@ class Thread:
         else:
             msg = await destination.send(mentions, embed=embed)
 
-        #if additional_images:
-        #    self.ready = False
-        #    await asyncio.gather(*additional_images)
-        #    self.ready = True
+        if additional_images:
+            self.ready = False
+            await asyncio.gather(*additional_images)
+            self.ready = True
 
         return msg
 
