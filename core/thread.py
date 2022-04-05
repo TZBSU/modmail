@@ -1052,7 +1052,7 @@ class Thread:
         elif note:
             embed.colour = self.bot.main_color
         else:
-            embed.set_footer(text=f"Message IDTEST: {message.id}")
+            embed.set_footer(text=f"Message ID: {message.id}")
             embed.colour = self.bot.recipient_color
 
         if (from_mod or note) and not thread_creation:
