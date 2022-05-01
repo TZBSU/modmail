@@ -139,7 +139,13 @@ def is_image_url(url: str, **kwargs) -> str:
         # gyazo support
         url = re.sub(
             r"(http[s]?:\/\/)((?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*(),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+)",
-            r"\1i.\2.png",
+            r"\1i.\2.gif",
+            url,
+        )
+    elif url.startswith("https://imgur.com") or url.startswith("http://imgur.com"):
+        url = re.sub(
+            r"(http[s]?:\/\/)((?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*(),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+)",
+            r"\1i.\2.jpg",
             url,
         )
 

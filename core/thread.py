@@ -999,7 +999,7 @@ class Thread:
                 not prioritize_uploads or ((url is None or is_image_url(url)) and filename)
             ) and not embedded_image:
                 if url is not None:
-                    embed.add_field(name="Image2", value=f"({url}) UPLOADED2")
+                    embed.add_field(name="Image2", value=f"{url} UPLOADED2")
                     embed.set_image(url=url)
                 if filename:
                     if is_sticker:
