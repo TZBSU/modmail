@@ -1,6 +1,7 @@
 import asyncio
 import re
 from datetime import datetime
+from datetime import timezone
 from itertools import zip_longest
 from typing import Optional, Union
 from types import SimpleNamespace
@@ -1492,7 +1493,8 @@ class Modmail(commands.Cog):
                 print("datatime.fromisoformat: ")
                 print(datetime.fromisoformat(end_time.group(1)))
                 print(datetime.fromisoformat(end_time.group(1)).tzname())
-                after = (datetime.fromisoformat(end_time.group(1)).replace(tzinfo=timezone.utc) - now.replace(tzinfo=timezone.utc)).total_seconds()
+                after = (datetime.fromisoformat(end_time.group(1)).replace(tzinfo=timezone.utc) -
+                         now.replace(tzinfo=timezone.utc)).total_seconds()
                 print("after datetime info:")
                 print(after)
 
