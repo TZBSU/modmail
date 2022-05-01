@@ -1493,8 +1493,8 @@ class Modmail(commands.Cog):
                 print("datatime.fromisoformat: ")
                 print(datetime.fromisoformat(end_time.group(1)))
                 print(datetime.fromisoformat(end_time.group(1)).tzname())
-                after = (datetime.fromisoformat(end_time.group(1)).replace(tzinfo=timezone.utc) -
-                         now.replace(tzinfo=timezone.utc)).total_seconds()
+                after = (datetime.fromisoformat(end_time.group(1)).replace(tzinfo=None) -
+                         now.replace(tzinfo=None)).total_seconds()
                 print("after datetime info:")
                 print(after)
 
