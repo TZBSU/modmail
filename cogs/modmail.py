@@ -1471,8 +1471,9 @@ class Modmail(commands.Cog):
         users = []
         now = ctx.message.created_at
         print("Now Date Object:")
-        print(type(now))
         print(now)
+        print(now.tzname())
+        print("After adding UTC TZ:")
         print(now.replace(tzinfo=timezone.utc).tzname())
 
         blocked_users = list(self.bot.blocked_users.items())
@@ -1492,10 +1493,12 @@ class Modmail(commands.Cog):
             if end_time is not None:
                 print("datetime.fromisoformat: ")
                 print(datetime.fromisoformat(end_time.group(1)))
+                print(datetime.fromisoformat(end_time.group(1)).tzname())
+                print("After adding UTC TZ:")
                 print(datetime.fromisoformat(end_time.group(1)).replace(tzinfo=timezone.utc).tzname())
-                after = (datetime.fromisoformat(end_time.group(1)).replace(tzinfo=None) -
-                         now.replace(tzinfo=None)).total_seconds()
-                print("after datetime info:")
+                after = (datetime.fromisoformat(end_time.group(1)).replace(tzinfo=timezone.utc) -
+                         now.replace(tzinfo=timezone.utc)).total_seconds()
+                print("after datetime info: seconds remaining in ban")
                 print(after)
 
                 if after <= 0:
