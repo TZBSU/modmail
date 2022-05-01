@@ -1472,6 +1472,7 @@ class Modmail(commands.Cog):
         print("Now Date Object:")
         print(type(now))
         print(now)
+        print(now.timetz())
 
         blocked_users = list(self.bot.blocked_users.items())
         for id_, reason in blocked_users:
@@ -1488,7 +1489,9 @@ class Modmail(commands.Cog):
                     )
 
             if end_time is not None:
+                print("datatime.fromisoformat: ")
                 print(datetime.fromisoformat(end_time.group(1)))
+                print(datetime.fromisoformat(end_time.group(1)).timetz())
                 after = (datetime.fromisoformat(end_time.group(1)) - now).total_seconds()
                 if after <= 0:
                     # No longer blocked
