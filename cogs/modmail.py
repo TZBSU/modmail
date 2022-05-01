@@ -1492,7 +1492,10 @@ class Modmail(commands.Cog):
                 print("datatime.fromisoformat: ")
                 print(datetime.fromisoformat(end_time.group(1)))
                 print(datetime.fromisoformat(end_time.group(1)).tzname())
-                after = (datetime.fromisoformat(end_time.group(1)) - now).total_seconds()
+                after = (datetime.fromisoformat(end_time.group(1)).replace(tzinfo=timezone.utc) - now.replace(tzinfo=timezone.utc)).total_seconds()
+                print("after datetime info:")
+                print(after)
+
                 if after <= 0:
                     # No longer blocked
                     self.bot.blocked_users.pop(str(id_))
