@@ -669,7 +669,7 @@ class Thread:
             tasks += [self.bot.api.edit_note(message1.id, message)]
         else:
             for m2 in message2:
-                print("M2:")
+                print("Message:")
                 print(type(m2))
                 print(m2)
                 if m2 is not None:
