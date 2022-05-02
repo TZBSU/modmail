@@ -672,7 +672,7 @@ class Thread:
                 print("M2:")
                 print(type(m2))
                 print(m2)
-                if m2 is not [None]:
+                if m2 is not None:
                     embed2 = m2.embeds[0]
                     embed2.description = message
                     tasks += [m2.edit(embed=embed2)]
