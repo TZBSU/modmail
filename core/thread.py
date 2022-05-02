@@ -666,7 +666,7 @@ class Thread:
         # need to check for note first, 2nd half of statement will always be true if it is a note.
         print(message1.embeds[0].author.name)
         if message1.embeds[0].author.name.startswith("Persistent Note"):
-            print("NOTE:")
+            print("This is a note!:")
             tasks += [self.bot.api.edit_note(message1.id, message)]
         else:
             for m2 in message2:
