@@ -669,11 +669,11 @@ class Thread:
             print("This is a note!:")
             tasks += [self.bot.api.edit_note(message1.id, message)]
         else:
-            if message2 is not [None]:
+            for m2 in message2:
                 print("Message:")
-                print(type(message2))
-                print(message2)
-                for m2 in message2:
+                print(type(m2))
+                print(m2)
+                if m2 is not None:
                     embed2 = m2.embeds[0]
                     embed2.description = message
                     tasks += [m2.edit(embed=embed2)]
