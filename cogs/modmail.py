@@ -1357,6 +1357,7 @@ class Modmail(commands.Cog):
                 print("category: ")
                 print(category)
                 category = category.strip("silently").strip("silent").strip()
+                print("after strip: ")
                 print(category)
                 try:
                     category = await SimilarCategoryConverter().convert(
