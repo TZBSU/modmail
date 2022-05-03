@@ -1360,7 +1360,9 @@ class Modmail(commands.Cog):
                 category.pop()
                 print("after pop: ")
                 print(category)
+                category.append("Silent")
             category = " ".join(category)
+            print(category)
             if category:
                 try:
                     category = await SimilarCategoryConverter().convert(
@@ -1368,10 +1370,10 @@ class Modmail(commands.Cog):
                     )  # attempt to find a category again
                 except commands.BadArgument:
                     category = None
-
+            print(category)
             if isinstance(category, str):
                 category = None
-
+            print(category)
         errors = []
         for u in list(users):
             if isinstance(u, discord.Role):
