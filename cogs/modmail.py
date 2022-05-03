@@ -1354,7 +1354,10 @@ class Modmail(commands.Cog):
         if isinstance(category, str):
             if "silent" in category or "silently" in category:
                 silent = True
+                print("category: ")
+                print(category)
                 category = category.strip("silently").strip("silent").strip()
+                print(category)
                 try:
                     category = await SimilarCategoryConverter().convert(
                         ctx, category
