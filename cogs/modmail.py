@@ -79,7 +79,6 @@ class Modmail(commands.Cog):
                     overwrites[key] = discord.PermissionOverwrite(read_messages=True)
 
         category = await self.bot.modmail_guild.create_category(name="Modmail", overwrites=overwrites)
-
         await category.edit(position=0)
 
         log_channel = await self.bot.modmail_guild.create_text_channel(name="bot-logs", category=category)
