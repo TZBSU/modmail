@@ -673,6 +673,7 @@ class Thread:
                 print("Message:")
                 print(type(m2))
                 print(m2)
+                print(message2)
                 if m2 is not None:
                     embed2 = m2.embeds[0]
                     embed2.description = message
