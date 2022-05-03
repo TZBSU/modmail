@@ -663,17 +663,17 @@ class Thread:
         embed1.description = message
 
         tasks = [self.bot.api.edit_message(message1.id, message), message1.edit(embed=embed1)]
-        # need to check for note first, 2nd half of statement will always be true if it is a note.
+        # need to check for note first.
         print(message1.embeds[0].author.name)
         if message1.embeds[0].author.name.startswith("Persistent Note"):
             print("This is a note!:")
             tasks += [self.bot.api.edit_note(message1.id, message)]
         else:
-            for m2 in message2:
+            if message2 is not [None]:
                 print("Message:")
-                print(type(m2))
-                print(m2)
-                if m2 is not None:
+                print(type(message2))
+                print(message2)
+                for m2 in message2:
                     embed2 = m2.embeds[0]
                     embed2.description = message
                     tasks += [m2.edit(embed=embed2)]
